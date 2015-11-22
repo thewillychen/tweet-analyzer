@@ -1,14 +1,19 @@
 <head>
-  <title>tweet-analyzer</title>
+	<title>tweet-analyzer</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+	<div class="container">
+ 		{{> content}}
+  	</div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="content">
+	{{#if currentUser}}
+		<h4>Logged in</h4>
+		{{> loginButtons}}
+	{{else}}
+   		<h4>Sign in with Twitter</h4>
+  		{{> loginButtons}}
+  	{{/if}}
 </template>
