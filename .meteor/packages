@@ -21,3 +21,7 @@ insecure                # Allow all DB writes from clients (for prototyping)
 twbs:bootstrap
 accounts-ui
 accounts-twitter
+meteorhacks:npm
+
+
+npm-container
