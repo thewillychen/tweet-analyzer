@@ -2,24 +2,37 @@ Meteor.startup(function () {
 	// code to run on server at startup
 
     var Twit = Meteor.npmRequire('twit');
-    var user =Meteor.users.findOne().services.twitter;
-    console.log(Meteor.users.findOne().services.twitter);
+    //var user =Meteor.users.findOne().services.twitter;
+    //console.log(Meteor.users.findOne().services.twitter);
     var T = new Twit({
-        consumer_key:         process.env.CONSUMERKEY, // API key
+        consumer_key:          process.env.CONSUMERKEY, // API key
         consumer_secret:      process.env.CONSUMERSECRET, // API secret
         app_only_auth:         true
     });
 
-    //  search twitter for all tweets containing the word 'banana'
-    //  since Nov. 11, 2011
-    T.get('search/tweets',
-        {
-            q: 'banana since:2011-11-11',
-            count: 10
-        },
-        function(err, data, response) {
-            console.log(data);
+    //Search usertimeline tweets
+    var options = { screen_name: 'godinthischilis', count: 2};
+
+    T.get('statuses/user_timeline', options, Meteor.bindEnvironment(function(err, tweets, response){
+        for (var i = 0; i < tweets.length ; i++) {
+             var userName = tweets[i].user.name;
+             var userScreenName = tweets[i].user.screen_name;
+             var userText = tweets[i].text;
+             var tweetDate = tweets[i].created_at;
+             var profileImg = tweets[i].user.profile_image_url;
+
+            console.log(userScreenName + "(" + userName + ")" + " said " + userText + " at " + tweetDate);
+            console.log("=======================================");
+            Tweets.insert({user: userName, userscreen: userScreenName, tweet: userText, picture: profileImg, date: tweetDate});
+
+
+            // console.log(tweet[i].text);
+            // Tweets.insert(tweet[i].text);
+            // console.log("Tweet parsed \n");
+
+            // console.log(Tweets.findOne());
         }
-    );
+        console.log('done');
+    }));
 
   });
