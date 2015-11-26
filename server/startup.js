@@ -4,10 +4,11 @@ Meteor.startup(function () {
     var Twit = Meteor.npmRequire('twit');
     //var user =Meteor.users.findOne().services.twitter;
     //console.log(Meteor.users.findOne().services.twitter);
+    var conf = JSON.parse(Assets.getText('twitter.json'));
     var T = new Twit({
-        consumer_key:          process.env.CONSUMERKEY, // API key
-        consumer_secret:      process.env.CONSUMERSECRET, // API secret
-        app_only_auth:         true
+        consumer_key: conf.consumer.key, // API key
+        consumer_secret: conf.consumer.secret, // API secret
+        app_only_auth: true
     });
 
     //Search usertimeline tweets
