@@ -4,6 +4,8 @@ Meteor.startup(function () {
     var Twit = Meteor.npmRequire('twit');
     //var user =Meteor.users.findOne().services.twitter;
     //console.log(Meteor.users.findOne().services.twitter);
+
+    //load consumer key and secret through a twitter.json file in private folder
     var conf = JSON.parse(Assets.getText('twitter.json'));
     var T = new Twit({
         consumer_key: conf.consumer.key, // API key
