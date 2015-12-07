@@ -36,7 +36,7 @@ Meteor.methods({
         var geoLocation = tweets[i].coordinates;
         var placeObj = tweets[i].place;
         var language = tweets[i].lang;
-        var userMentions = tweets[i].user_mentions;
+        var userMentions = tweets[i].user_mentions; //Currently not working
 
         //retweet info
         var retweetedUser = tweets[i].in_reply_to_user_id_str;
@@ -52,7 +52,7 @@ Meteor.methods({
           user_id: userId, //primary key in User collection, referenced through this id
           user_screen: userScreenName, //This field might be unnecessary in Tweets
           text: userText,
-          date: tweetDate,
+          date: new Date(tweetDate),
           retweeted_status: retweetOfStatus,
           retweet_count: retweetCount,
           favorite_count: favoriteCount,
@@ -66,7 +66,7 @@ Meteor.methods({
         });
 
         //Insert into TwitUsers collection - might need to store more info
-        if(users.find({user_id: userId}).count() == 0){  //Really ugly since it's doing a find each time currently
+        if(TwitUsers.find({user_id: userId}).count() == 0){  //Really ugly since it's doing a find each time currently
           TwitUsers.insert({
             user_id: userId,
             name: userName,
