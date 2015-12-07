@@ -6,47 +6,6 @@ function createUserMentionsArray(userMentions){
   return mentionsStrArray;
 }
 
-// function getUserHistory(user, twit) {
-//   var data = [];
-//   search();
-
-//   function search(lastId) {
-//     var args = {
-//       screen_name: user,
-//       count: 200,
-//       include_rts: 1
-//     };
-//     if(lastId) args.max_id = lastId;
-
-//     twit.get('statuses/user_timeline', options, Meteor.bindEnvironment(function(err, tweets, response){
-
-//     }
-
-
-//     function onTimeline(err, chunk) {
-//       if (err) {
-//         console.log('Twitter search failed!');
-//         return done(err);
-//       }
-
-//       if (!chunk.length) {
-//         console.log('User has not tweeted yet');
-//         return done(err);
-//       }
-
-//       //Get rid of the first element of each iteration (not the first time)
-//       if (data.length) chunk.shift();
-
-//       data = data.concat(chunk);
-//       var thisId = parseInt(data[data.length - 1].id_str);
-
-//       if (chunk.length) return search(thisId);
-//       console.log(data.length + ' tweets imported');
-//       return done(undefined, data);
-//     }
-//   }
-// }
-
 Meteor.methods({
   'loadUserTweets': function(username){
     //Tweets._ensureIndex({'tweet_id':1}, {unique: 1}); //unique indexes
