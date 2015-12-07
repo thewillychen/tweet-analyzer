@@ -1,3 +1,11 @@
+function createUserMentionsArray(userMentions){
+  var mentionsStrArray = [];
+  for(var i = 0; i < userMentions.length; i++){
+    mentionsStrArray.push(userMentions[i].id_str);
+  }
+  return mentionsStrArray;
+}
+
 Meteor.methods({
   'loadUserTweets': function(username){
     //Tweets._ensureIndex({'tweet_id':1}, {unique: 1}); //unique indexes
@@ -36,7 +44,8 @@ Meteor.methods({
         var geoLocation = tweets[i].coordinates;
         var placeObj = tweets[i].place;
         var language = tweets[i].lang;
-        var userMentions = tweets[i].user_mentions; //Currently not working
+        var userMentions = createUserMentionsArray(tweets[i].entities.user_mentions); //Currently not working
+
 
         //retweet info
         var retweetedUser = tweets[i].in_reply_to_user_id_str;
