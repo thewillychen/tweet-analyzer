@@ -5,6 +5,6 @@ Template.topFavorites.helpers({
 	}
 });
 
-Template.topFavorites.events({ //Maybe add some clicking on tweet functionality?
+Template.mostFavorited.events({ //Maybe add some clicking on tweet functionality?
 
 });

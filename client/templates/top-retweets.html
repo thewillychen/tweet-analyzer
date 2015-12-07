@@ -1,0 +1,8 @@
+<template name="topRetweets">
+	<h1>Top Retweeted tweets</h1>
+	<ol>
+		{{#each retweetedTweet}}
+			<li class="tweet">{{tweet_id}}: tweet text: {{text}}  Retweet Count: {{retweet_count}}</li>
+		{{/each}}
+	</ol>
+</template>
