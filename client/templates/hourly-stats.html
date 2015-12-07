@@ -2,5 +2,11 @@
 <h1>Hourly Stats</h1>
 	{{#if currentUser}}
 		<input type="button" class="getHourlyStats" value="Parse hours">
+	<ul>
+		<h2>Count by hour</h2>	
+		{{#each hourlyCounts}}
+			<li class="hour">hour: {{hour}} count: {{count}}</li> 
+		{{/each}}
+	</ul>	
 	{{/if}}
 </template>
