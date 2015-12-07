@@ -1,4 +1,4 @@
-userId = '237097346';
+userId = '17919972';
 Meteor.methods({
 	'getTweetsByHour': function(){
 	var pipeline = [
