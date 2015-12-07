@@ -1,0 +1,8 @@
+<template name="mostFavorited">
+	<h1>Most Favorited tweets</h1>
+	<ol>
+		{{#each favoriteTweet}}
+			<li class="tweet">{{tweet_id}}: tweet text: {{text}}  Favorite Count: {{favorite_count}}</li>
+		{{/each}}
+	</ol>
+</template>

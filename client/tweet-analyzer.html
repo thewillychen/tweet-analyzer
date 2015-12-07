@@ -18,10 +18,6 @@
   		{{> loginButtons}}
   	{{/if}}
   	{{> loadTweets}}
-</template>
 
-<template name="loadTweets">
-	{{#if currentUser}}
-		<input type="button" class="loadUserTweets" value="Load my tweets">
-	{{/if}}
+  	{{> mostFavorited}}
 </template>

@@ -66,12 +66,14 @@ Meteor.methods({
         });
 
         //Insert into TwitUsers collection - might need to store more info
-        TwitUsers.insert({
-          user_id: userId,
-          name: userName,
-          screen_name: userScreenName,
-          profile_img_url: profileImg
-        });
+        if(users.find({user_id: userId}).count() == 0){  //Really ugly since it's doing a find each time currently
+          TwitUsers.insert({
+            user_id: userId,
+            name: userName,
+            screen_name: userScreenName,
+            profile_img_url: profileImg
+          });
+        }
       }
       console.log('done');
     }));
