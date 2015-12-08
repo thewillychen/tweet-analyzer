@@ -25,8 +25,8 @@ Template.hourlyStats.events({
 	'click .getHourlyStats': function(){
 		Meteor.call('getTweetsByHour', function(err, result){
 			Session.set('hourlyStats', result);
-			Session.set('showChart', true);
 		});
+		Session.set('showChart', true);
 	}
 });
 

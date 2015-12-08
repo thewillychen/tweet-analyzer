@@ -1,0 +1,10 @@
+<template name="goalProgress">
+	{{#if currentUser}}
+		<h1>My goals</h1>
+    <ul>
+      {{#each goals}}
+        <li class="goal">{{number}} {{type}}</li> 
+      {{/each}}
+    </ul> 
+	{{/if}}
+</template>
