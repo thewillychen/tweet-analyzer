@@ -18,17 +18,18 @@ Template.goalDropdown.events({
 });
 
 Template.goalForm.events({
-	'submit form': function(event){
+	'submit .new-goal': function(event){
 		// TODO: error checking and the likes
 		event.preventDefault();
 
 		// Get values
 		var goalNumber = event.target.goalNumber.value;
 		var goalType = Session.get('selectedGoal');
-	    
-		// Insert task
-	    Meteor.call("addGoal", userId, goalNumber, goalType);
 
-	    // TODO: clear form
+		// Insert task
+	    Meteor.call('addGoal', userId, goalNumber, goalType);
+
+	    // Clear form. TODO: set/clear dropdown
+	    event.target.goalNumber.value = "";
 	}
 });
