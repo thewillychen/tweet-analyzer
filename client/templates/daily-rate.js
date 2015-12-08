@@ -1,6 +1,9 @@
 Template.dailyRate.helpers({
 	'tweetRate': function(){
-		return Session.get('dailyRate').toFixed(3);
+		if(Session.get('dailyRate') == null)
+			return null;
+		else
+			return Session.get('dailyRate').toFixed(3);
 	}
 });
 
