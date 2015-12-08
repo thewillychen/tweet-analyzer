@@ -8,7 +8,7 @@ Template.hourChart.rendered = function() {
 
     title = 'Tweets by Hour';
     chart = {
-     target: 'chart1',
+     target: 'hrchart',
      type: 'ColumnChart',
      columns: [
        ['number', 'Hour of Day'],
@@ -24,32 +24,3 @@ Template.hourChart.rendered = function() {
 
    drawChart(chart);
 }
-
-// Template.hourChart.rendered = function() {
-
-//     hourlyCounts = Session.get('hourlyCounts');
-//     title = 'Number of tweets by hour'
-
-//     chart = {
-//      target: 'chart1',
-//      type: 'ColumnChart',
-//      columns: [
-//        ['timeofday', 'Hour of Day'],
-//        ['number', 'Number of Tweets']
-//      ],
-//      rows: [
-//        ['1 am', 3],
-//        ['2 am', 1],
-//        ['3 am', 1],
-//        ['4 am', 1],
-//        ['5 am', 2]
-//      ],
-//      options: {
-//        'title':title,
-//        'width':400,
-//        'height':300
-//      }
-//    };
-
-//    drawChart(chart);
-// }
