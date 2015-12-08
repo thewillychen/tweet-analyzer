@@ -20,7 +20,8 @@ twbs:bootstrap
 accounts-ui
 accounts-twitter
 meteorhacks:npm
-
+rafaelhdr:google-charts
 
 npm-container
 meteorhacks:aggregate
+momentjs:moment
