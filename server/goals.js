@@ -2,7 +2,7 @@ Meteor.methods({
   'getGoalTypes': function(){
     var goals = JSON.parse(Assets.getText('goal-types.json')).goals;
     return goals;
-  }
+  },
 
   'addGoal': function(userId, goalNumber, goalType) {
     console.log("inserting yo");
