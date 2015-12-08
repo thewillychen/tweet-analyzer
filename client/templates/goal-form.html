@@ -1,0 +1,26 @@
+<template name="goalForm">
+	{{#if currentUser}}
+		<h1>Shoot for the moon 😂</h1>
+		<p>I want to have: </p>
+        <form class="new-goal">
+          <input type="number" name="goalNumber" placeholder="Type a number" />
+          {{> goalDropdown}}
+          <input type="button" value="Submit!">
+        </form>
+	{{/if}}
+</template>
+
+<template name="goalDropdown">
+  {{#dropdownTrigger name="goalDropdown"}}
+    <button>Select your goal type</button>
+  {{/dropdownTrigger}}
+
+  {{#dropdown name="goalDropdown" classes="dropdown--menu" align="left"}}
+    <ul class="dropdown__menu">
+      {{#each goalTypes}}
+        <ul class="goalType" role="menuItem">{{this}}</ul>
+      {{/each}}
+    </ul>
+  {{/dropdown}}
+</template>
+
