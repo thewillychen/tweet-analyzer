@@ -7,14 +7,20 @@ Meteor.methods({
 		return hourlyCounts;		
 	},
 	'getTweetRate': function(){
-		oldestTweet = Tweets.findOne({user_id: userId},{sort: {date: 1}, limit: 1}).date;
-		var currentDate = new Date();
-		console.log(oldestTweet);
-		console.log(currentDate);
-		var diff = Math.abs(currentDate - oldestTweet);
-		var days = new Date(diff);
-		console.log(days);
-		return days;
+		var currentDay = moment();
+		var old = Tweets.findOne({user_id: userId},{sort: {date: 1}, limit: 1}).date;
+		var oldestTweet = moment(old);
+		var days = currentDay.diff(oldestTweet, 'days');
+		console.log(Tweets.find().count()/days);
+		return Tweets.find().count()/days;
 	}
 
 });
+
+
+// Template.dailyRate.onCreated(function(){
+// 	Meteor.call('getTweetRate', function(err, result){
+// 		Session.set('dailyRate', result);
+// 	});		
+// 	return Session.get('dailyRate');
+// });
