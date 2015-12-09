@@ -1,5 +1,5 @@
 Template.goalProgress.helpers({
-	'goals': function(){
+	'userGoals': function(){
 		return Session.get('goals');
 	}
 }); 
