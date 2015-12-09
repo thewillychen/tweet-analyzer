@@ -15,8 +15,8 @@ Meteor.methods({
 
   'loadGoals': function(userId) {
     var cursor = Goals.find({user_id: userId}, {sort: {createdAt: -1}});
-    // console.log(cursor.count());
-    return cursor;
+    console.log(cursor.count());
+    return cursor.toArray();
   },
 
   'getProgress': function(userId, goalTypes) {

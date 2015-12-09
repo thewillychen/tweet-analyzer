@@ -1,5 +1,3 @@
-userId = '17919972';
-
 Template.goalDropdown.helpers({
 	'goalTypes': function(){
 		Meteor.call('getGoalTypes', function(err, result){
@@ -27,7 +25,7 @@ Template.goalForm.events({
 		var goalType = Session.get('selectedGoal');
 
 		// Insert task
-	    Meteor.call('addGoal', userId, goalNumber, goalType);
+	    Meteor.call('addGoal', Session.get('userId'), goalNumber, goalType);
 
 	    // Clear form. TODO: set/clear dropdown
 	    event.target.goalNumber.value = "";
