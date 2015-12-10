@@ -11,7 +11,6 @@ Meteor.methods({
 		var old = Tweets.findOne({user_id: userId},{sort: {date: 1}, limit: 1}).date;
 		var oldestTweet = moment(old);
 		var days = currentDay.diff(oldestTweet, 'days');
-		console.log(Tweets.find().count()/days);
 		return Tweets.find().count()/days;
 	},
 
