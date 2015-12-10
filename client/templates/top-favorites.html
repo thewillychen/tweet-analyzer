@@ -1,8 +1,13 @@
 <template name="topFavorites">
 	<h1>Top Favorited tweets</h1>
-	<ol>
+	
+	<ol class="list-group">
 		{{#each favoriteTweet}}
-			<li class="tweet">{{tweet_id}}: tweet text: {{text}}  Favorite Count: {{favorite_count}}</li>
+		<li class="list-group-item">
+			<span class="badge">{{favorite_count}}</span>
+			{{text}}
+		</li>
 		{{/each}}
 	</ol>
+
 </template>
