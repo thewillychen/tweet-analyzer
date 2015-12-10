@@ -5,7 +5,7 @@
 		<ul>
     	<ul>
       		{{#each goals}}
-       			<li class="goal {{#if private}}private{{/if}}">Name: {{text}}  Number: {{number}} Type:{{type}}</li>
+       			<li class="goal">Name: {{text}}  Number: {{number}} Type: {{type}}</li>
        			<button class="delete">&times;</button>
 
 	    	{{#if isOwner}}
@@ -28,12 +28,19 @@
 <template name="publicGoals">
 	<div class="thumbnail">
 		<h2>Public goals</h2>
-		<ul>
-    	<ul>
-      		{{#each publicGoals}}
-       			<li class="pubGoal">Name: {{text}}  Number: {{number}} Type:{{type}}</li>
-      		{{/each}}
-    	</ul> 
-		</ul> 
+		<ul class="media-list">
+		{{#each publicGoals}}
+		<li class="media">
+			<a href="http://twitter.com/{{screen_name}}" class="pull-left">
+				<img src="{{profile_image_url}}" class="media-object" alt="Twitter Profile">
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading">@{{screen_name}} <small><i>Made on {{createdAt}}</i></small></h4>
+				<p>{{text}}: Number: {{number}} Type: {{type}}</p>
+			</div>
+		</li>
+		{{/each}}
+		</ul>
+
 	</div>
 </template>		

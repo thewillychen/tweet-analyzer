@@ -30,7 +30,7 @@ Template.goalForm.events({
 		var twitId = Meteor.user().services.twitter.id;
 
 		// Insert task
-	    Meteor.call('addGoal', Session.get('userId'),goalText, goalNumber, goalType);
+	    Meteor.call('addGoal', Meteor.userId(), screenName, profile,goalText, goalNumber, goalType);
 
 	    // Clear form. TODO: set/clear dropdown
 	    event.target.goalNumber.value = "";

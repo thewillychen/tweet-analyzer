@@ -3,10 +3,11 @@ Meteor.methods({
     var goals = JSON.parse(Assets.getText('goal-types.json')).goals;
     return goals;
   },
-
-  'addGoal': function(userId, goalText, goalNumber, goalType) {
+  'addGoal': function(userId, screenName, profilePic, goalText, goalNumber, goalType) {
     Goals.insert({
       user_id: userId,
+      screen_name: screenName,
+      profile_image_url: profilePic,
       text: goalText,
       type: goalType,
       number: goalNumber,

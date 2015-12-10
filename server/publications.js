@@ -11,11 +11,10 @@ Meteor.publish('topRetweets', function(){
 });
 
 Meteor.publish('userGoals', function(){
-	return Goals.find({user_id: userId}, {sort: {createdAt: -1}, limit: 10});
+	return Goals.find({user_id: this.userId}, {sort: {createdAt: -1}, limit: 10});
 });
 
 Meteor.publish('publicGoals', function(){
-	console.log(Goals.find({private: false}, {limit: 10}).count());
 	return Goals.find({private: false}, {limit: 10});
 });
 

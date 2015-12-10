@@ -2,10 +2,10 @@ Template.goalProgress.helpers({
 	'goals': function(){
 		var twitAccount = Session.get('twitAccount');
 		//console.log(Meteor.userId());
-		return Goals.find({user_id: Session.get('userId')});
+		return Goals.find({user_id: Meteor.userId()});
 	},
 	'isOwner': function(){
-		return this.user_id == Session.get('userId');
+		return this.user_id == Meteor.userId();
 	}
 }); 
 
