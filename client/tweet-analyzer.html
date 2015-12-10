@@ -4,30 +4,42 @@
 
 <body>
 	<div class="container">
- 		{{> content}}
-  	</div>
+   {{> content}}
+ </div>
 
 </body>
 
 <template name="content">
-	{{#if currentUser}}
-		<h4>Logged in</h4>
-		{{> loginButtons}}
-	{{else}}
-   		<h4>Sign in with Twitter</h4>
-  		{{> loginButtons}}
-  	{{/if}}
-  	{{> loadTweets}}
+  <div class="page-header">
+    <h1>Tweet Analyzer 😍 <small>Never enough analytics!</small></h1>
+  </div>
+
+  {{#unless currentUser}}
+  <h4>Sign in with Twitter</h4>
+  {{/unless}}
+  {{> loginButtons}}  
+  {{> loadTweets}}
+  <div class="row">
+    <div class="col-md-6">
+      {{> goalForm}}
+    </div>
+    <div class="col-md-6">
+      {{> goalProgress}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      {{> hourlyStats}}
+    </div>
+    <div class="col-md-6">
+      {{> dailyRate}}
+    </div>
     
-    {{> goalForm}}
+  </div>
 
-    {{> goalProgress}}
+  {{> topFavorites}}
 
-  	{{> topFavorites}}
-
-  	{{> topRetweets}}
-
-  	{{> hourlyStats}}
-
-    {{> dailyRate}}
+  {{> topRetweets}}
+  
 </template>

@@ -1,6 +1,15 @@
 body{
-	padding-top:20px;
+	padding-top: 20px;
 }
+
+/*div {
+    margin: 10 0px;
+}*/
+
 .footer{
 	margin-bottom: 30px
+}
+.thumbnail{
+	padding: 0px 15px 15px 15px;
+	margin: 5px;
 }

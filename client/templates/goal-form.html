@@ -1,27 +1,34 @@
 <template name="goalForm">
-	{{#if currentUser}}
-		<h1>Shoot for the moon 😂</h1>
-		<p>I want to have: </p>
-        <form class="new-goal">
-          <input type="text" name="goalText" placeholder="Name your goal!"/>
-          <input type="number" name="goalNumber" placeholder="Type a number" />
-          {{> goalDropdown}}
-          <input type="submit" value="Submit!">
-        </form>
-	{{/if}}
+  <div class="thumbnail">
+   {{#if currentUser}}
+   <h2>Shoot for the moon 😂</h2>
+   <p>I want to have: </p>
+   <form class="new-goal">
+    <div class="row">
+      <div class="col-lg-6">
+        <input type="text" class="form-control" placeholder="Type a number... aim high" aria-describedby="basic-addon1">
+      </div>
+      <div class="col-lg-4">
+        {{> goalDropdown}}
+      </div>
+    </div>
+    <input type="submit" value="Submit!">
+  </form>
+  {{/if}}
+</div>
 </template>
 
 <template name="goalDropdown">
-  {{#dropdownTrigger name="goalDropdown"}}
-    <button>Select your goal type</button>
-  {{/dropdownTrigger}}
-
-  {{#dropdown name="goalDropdown" classes="dropdown--menu" align="left"}}
-    <ul class="dropdown__menu">
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Select your goal type
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
       {{#each goalTypes}}
-        <ul class="goalType" role="menuItem">{{this}}</ul>
+      <li class="goalType"><a href="#">{{this}}</a></li>
       {{/each}}
     </ul>
-  {{/dropdown}}
+  </div>
 </template>
 

@@ -1,6 +1,8 @@
 <template name="goalProgress">
-	{{#if currentUser}}
-		<h1>My goals</h1>
+	<div class="thumbnail">
+		{{#if currentUser}}
+		<h2>My goals</h2>
+		<ul>
     	<ul>
       		{{#each goals}}
        			<li class="goal {{#if private}}private{{/if}}">Name: {{text}}  Number: {{number}} Type:{{type}}</li>
@@ -18,13 +20,7 @@
 
       		{{/each}}
     	</ul> 
-	{{/if}}
-
-	<h1>Public Goals</h1>
-	<u1>
-		{{#each publicGoal}}
-			<li class="publicGoal">Name: {{text}} Number: {{number}} Type:{{type}}</li>
-		{{/each}}
-	</u1>
-
+		</ul> 
+		{{/if}}
+	</div>
 </template>

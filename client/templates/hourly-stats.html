@@ -1,18 +1,19 @@
 <template name="hourlyStats">
-<h1>Hourly Stats</h1>
-
-	{{#if currentUser}}
+<div class="thumbnail">
+		<h2>Hourly Stats</h2>
+		{{#if currentUser}}
 		<input type="button" class="getHourlyStats" value="Parse hours">
 		{{#if showChart }}
-			{{> hourChart}}
+		{{> hourChart}}
 		{{/if}}
-	<ul>
+<!-- 	<ul>
 		<h2>Count by hour</h2>	
 		{{#each hourlyCounts}}
 			<li class="hour">hour: {{hour}} count: {{count}}</li> 
 		{{/each}}
-	</ul>	
+	</ul>	 -->
 	{{/if}}
+</div>
 </template>
 
 <template name="hourChart">
