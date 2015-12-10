@@ -13,3 +13,7 @@ Meteor.publish('topRetweets', function(){
 Meteor.publish('userGoals', function(){
 	return Goals.find({user_id: userId}, {sort: {createdAt: -1}, limit: 10});
 });
+
+Meteor.publish('publicGoals', function(){
+	return Goals.find({user_id: {$ne: userId}, private: false}, {limit: 10});
+})

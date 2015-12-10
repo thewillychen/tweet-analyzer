@@ -10,11 +10,15 @@ Meteor.methods({
       text: goalText,
       type: goalType,
       number: goalNumber,
-      createdAt: new Date() 
+      createdAt: new Date(),
+      private: false 
     });
   },
   'removeGoal': function(goalId){
     Goals.remove({_id: goalId});
+  },
+  'setPrivate': function(goalId, setPrivacy){
+    Goals.update(goalId, {$set: {private: setPrivacy}});
   },
 
   'getProgress': function(userId, goalTypes) {
