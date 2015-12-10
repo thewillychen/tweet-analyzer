@@ -25,6 +25,10 @@ Template.goalForm.events({
 		var goalNumber = event.target.goalNumber.value;
 		var goalType = Session.get('selectedGoal');
 
+		var profile = Meteor.user().services.twitter.profile_image_url;
+		var screenName = Meteor.user().services.twitter.screenName;
+		var twitId = Meteor.user().services.twitter.id;
+
 		// Insert task
 	    Meteor.call('addGoal', Session.get('userId'),goalText, goalNumber, goalType);
 
