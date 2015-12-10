@@ -4,19 +4,17 @@ Meteor.methods({
     return goals;
   },
 
-  'addGoal': function(userId, goalNumber, goalType) {
+  'addGoal': function(userId, goalText, goalNumber, goalType) {
     Goals.insert({
       user_id: userId,
+      text: goalText,
       type: goalType,
       number: goalNumber,
       createdAt: new Date() 
     });
   },
-
-  'loadGoals': function(userId) {
-    var cursor = Goals.find({user_id: userId}, {sort: {createdAt: -1}});
-    console.log(cursor.count());
-    return cursor.toArray();
+  'removeGoal': function(goalId){
+    Goals.remove({_id: goalId});
   },
 
   'getProgress': function(userId, goalTypes) {

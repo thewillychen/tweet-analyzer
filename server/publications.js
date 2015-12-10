@@ -8,4 +8,8 @@ Meteor.publish('topFavorites', function(){
 
 Meteor.publish('topRetweets', function(){
 	return Tweets.find({user_id: userId, retweeted_status: null}, {sort: {retweet_count: -1}, limit: returnLimit});
-})
+});
+
+Meteor.publish('userGoals', function(){
+	return Goals.find({user_id: userId}, {sort: {createdAt: -1}, limit: 10});
+});

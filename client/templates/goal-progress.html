@@ -3,7 +3,8 @@
 		<h1>My goals</h1>
     <ul>
       {{#each goals}}
-        <li class="goal">{{number}} {{type}}</li> 
+        <li class="goal">Name: {{text}}  Number: {{number}} Type:{{type}}</li>
+        <button class="delete">&times;</button> 
       {{/each}}
     </ul> 
 	{{/if}}
