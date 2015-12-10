@@ -6,10 +6,10 @@
     	<ul>
       		{{#each goals}}
        			<li class="goal">Name: {{text}}  Number: {{number}} Type: {{type}}</li>
-       			<button class="delete">&times;</button>
+       			<button type = "button" class = "btn btn-primary delete">&times;</button>
 
 	    	{{#if isOwner}}
-		    	<button class="toggle-private">
+		    	<button type = "button" class = "btn btn-warning toggle-private">
 		        	{{#if private}}
 		          	Private
 		        	{{else}}

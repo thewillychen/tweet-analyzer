@@ -2,12 +2,6 @@ Meteor.call('getTweetsByHour', function(err, result){
   Session.set('hourlyStats', result);
 });
 
-Template.dailyRate.onCreated(function(){
-	Meteor.call('getTweetsByHour', function(err, result){
-		Session.set('hourlyStats', result);
-	});
-});
-
 Template.hourlyStats.helpers({
 	'hourlyCounts': function(){
 		var hourlyCounts = Session.get('hourlyStats');
