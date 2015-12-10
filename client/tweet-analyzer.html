@@ -20,22 +20,26 @@
   {{> loginButtons}}  
   {{> loadTweets}}
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       {{> goalForm}}
     </div>
-    <div class="col-md-8">
+    <div class="col-md-6">
       {{> goalProgress}}
     </div>
   </div>
 
-
-
+  <div class="row">
+    <div class="col-md-6">
+      {{> hourlyStats}}
+    </div>
+    <div class="col-md-6">
+      {{> dailyRate}}
+    </div>
+    
+  </div>
 
   {{> topFavorites}}
 
   {{> topRetweets}}
-
-  {{> hourlyStats}}
-
-  {{> dailyRate}}
+  
 </template>
