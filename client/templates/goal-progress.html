@@ -2,6 +2,19 @@
 	<div class="thumbnail">
 		{{#if currentUser}}
 		<h2>My goals</h2>
+		<div class="thumbnail">
+			<ul class="media-list">
+			{{#each goals}}
+			<li class="media">
+				<div class="media-body">
+					<H4><i>Made on {{createdAt}}</i></H4>
+					<p>{{text}}: A Goal for {{number}} {{type}}!</p>
+				</div>
+			</li>
+			{{/each}}
+			</ul>
+		</div>
+
 		<ul>
     	<ul>
       		{{#each goals}}
@@ -36,11 +49,10 @@
 			</a>
 			<div class="media-body">
 				<h4 class="media-heading">@{{screen_name}} <small><i>Made on {{createdAt}}</i></small></h4>
-				<p>{{text}}: Number: {{number}} Type: {{type}}</p>
+				<p>{{text}}: A Goal for {{number}} {{type}}!</p>
 			</div>
 		</li>
 		{{/each}}
 		</ul>
-
 	</div>
 </template>		
