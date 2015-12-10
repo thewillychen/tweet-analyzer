@@ -24,7 +24,11 @@
 <template name="goalDropdown">
   <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Select your goal type
+      {{#if selectedGoal}}
+        {{selectedGoal}}
+      {{else}}
+        Select your goal type
+      {{/if}}
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -34,4 +38,5 @@
     </ul>
   </div>
 </template>
+
 

@@ -4,6 +4,9 @@ Template.goalDropdown.helpers({
 			Session.set('goalTypes', result);
 		});
 		return Session.get('goalTypes');	
+	},
+	'selectedGoal': function(){
+		return Session.get('selectedGoal');
 	}
 })
 
