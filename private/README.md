@@ -10,12 +10,12 @@ For further informaion about Meteor please see the docs:
 http://docs.meteor.com/#/full/
 
 Once you have Meteor installed, cd into the folder and execute the following code:
->$ meteor
+> meteor
 
 This will launch the site locally on localhost:3000
 
 If you want to inspect the database, execute the following line in terminal:
->$ meteor mongo
+> meteor mongo
 
 You will need a Twitter access key to run this program. Once you click on the "Sign in with Twitter" button on the top right of the site, simply follow the instructions to get this set up. 
 
