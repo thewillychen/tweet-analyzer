@@ -26,7 +26,7 @@ This should be the structure of twitter.json. Place this file in the Private/ fo
 {
 	"consumer": {
 		"key": "YOURKEY",
-		"secret": "YOURSECRET:
+		"secret": "YOURSECRET"
 	}
 }
 ```
