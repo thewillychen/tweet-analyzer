@@ -31,29 +31,38 @@
   <div class="page-header">
     <h1>Tweet Analyzer <small>Never enough analytics!</small></h1>
   </div>
+  {{#if currentUser}}
+    {{> loadTweets}}
+    <div class="row">
+      <div class="col-md-6">
+        {{> goalForm}}
+      </div>
+      <div class="col-md-6">
+        {{> goalProgress}}
+      </div>
+    </div>
 
-  {{> loadTweets}}
-  <div class="row">
-    <div class="col-md-6">
-      {{> goalForm}}
-    </div>
-    <div class="col-md-6">
-      {{> goalProgress}}
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      {{> hourlyStats}}
-    </div>
-    <div class="col-md-6">
-      {{> dailyRate}}
+    <div class="row">
+      <div class="col-md-12">
+        {{> publicGoals}}
+      </div>
     </div>
     
-  </div>
+    <div class="row">
+      <div class="col-md-6">
+        {{> hourlyStats}}
+      </div>
+      <div class="col-md-6">
+        {{> dailyRate}}
+      </div>
+      
+    </div>
 
-  {{> topFavorites}}
+    {{> topFavorites}}
 
-  {{> topRetweets}}
+    {{> topRetweets}}
+  {{else}}
+    {{> publicGoals}}
+  {{/if}}
   
 </template>

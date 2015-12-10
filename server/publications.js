@@ -15,5 +15,13 @@ Meteor.publish('userGoals', function(){
 });
 
 Meteor.publish('publicGoals', function(){
-	return Goals.find({user_id: {$ne: userId}, private: false}, {limit: 10});
+	console.log(Goals.find({private: false}, {limit: 10}).count());
+	return Goals.find({private: false}, {limit: 10});
+});
+
+Meteor.publish('userData', function(){
+	if(this.userId){
+		return Meteor.users.find({_id: this.userId},
+        {fields: {'services.twitter.profile_image_url': 1, 'services.twitter.id': 1, 'services.twitter.screenName': 1}});
+	}
 });

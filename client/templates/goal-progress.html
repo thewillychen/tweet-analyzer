@@ -24,3 +24,16 @@
 		{{/if}}
 	</div>
 </template>
+
+<template name="publicGoals">
+	<div class="thumbnail">
+		<h2>Public goals</h2>
+		<ul>
+    	<ul>
+      		{{#each publicGoals}}
+       			<li class="pubGoal">Name: {{text}}  Number: {{number}} Type:{{type}}</li>
+      		{{/each}}
+    	</ul> 
+		</ul> 
+	</div>
+</template>		

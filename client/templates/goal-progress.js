@@ -1,12 +1,8 @@
 Template.goalProgress.helpers({
-
 	'goals': function(){
 		var twitAccount = Session.get('twitAccount');
 		//console.log(Meteor.userId());
-		return Goals.find();
-	},
-	'publicGoals': function(){
-		return Goals.find({user_id: {$ne: userId}});
+		return Goals.find({user_id: Session.get('userId')});
 	},
 	'isOwner': function(){
 		return this.user_id == Session.get('userId');
@@ -20,4 +16,11 @@ Template.goalProgress.events({
 	"click .toggle-private": function(){
 		Meteor.call('setPrivate', this._id, ! this.private);
 	}
+});
+
+Template.publicGoals.helpers({
+	'publicGoals': function(){
+		console.log(Goals.find({private: false}).count());
+		return Goals.find({private: false});
+	}	
 });
