@@ -4,9 +4,11 @@ Meteor.methods({
     return goals;
   },
 
-  'addGoal': function(userId, goalText, goalNumber, goalType) {
+  'addGoal': function(userId, userInfo, goalText, goalNumber, goalType) {
     Goals.insert({
       user_id: userId,
+      user_screen: userInfo.twitter.screenName,
+      prof_pic: userInfo.twitter.profile_img_url,
       text: goalText,
       type: goalType,
       number: goalNumber,

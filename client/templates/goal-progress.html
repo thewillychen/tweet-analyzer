@@ -3,7 +3,8 @@
 		<h1>My goals</h1>
     	<ul>
       		{{#each goals}}
-       			<li class="goal {{#if private}}private{{/if}}">Name: {{text}}  Number: {{number}} Type:{{type}}</li>
+      			<img src="{{prof_pic}}">
+       			<li class="goal {{#if private}}private{{/if}}">@{{user_screen}}: Name: {{text}}  Number: {{number}} Type:{{type}}</li>
        			<button class="delete">&times;</button>
 
 	    	{{#if isOwner}}
