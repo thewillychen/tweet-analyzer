@@ -3,32 +3,36 @@
 		{{#if currentUser}}
 		<h2>My goals</h2>
 		<table class="table table-hover">
-			<tr>
-				<th>Name</th>
-				<th>Number</th>
-				<th>Type</th>
-				<th>Remove</th>
-				<th>Toggle</th>
-			</tr>
-			{{#each goals}}
-			{{#if isOwner}}
-			<tr>				
-				<td>{{text}}</td>
-				<td>{{number}}</td>
-				<td>{{type}}</td>
-				<td><button type = "button" class = "btn btn-primary delete">&times;</button></td>
-				<td>
-					<button type = "button" class = "btn btn-warning toggle-private">
-						{{#if private}}
-						Private
-						{{else}}
-						Public
-						{{/if}}
-					</button>
-				</td>
-			</tr>
-			{{/if}} 
-			{{/each}}
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Number</th>
+					<th>Type</th>
+					<th>Remove</th>
+					<th>Toggle</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each goals}}
+				{{#if isOwner}}
+				<tr>				
+					<td>{{text}}</td>
+					<td>{{number}}</td>
+					<td>{{type}}</td>
+					<td><button type = "button" class = "btn btn-primary btn-xs delete">&times;</button></td>
+					<td>
+						<button type = "button" class = "btn btn-warning btn-sx toggle-private">
+							{{#if private}}
+							Private
+							{{else}}
+							Public
+							{{/if}}
+						</button>
+					</td>
+				</tr>
+				{{/if}} 
+				{{/each}}
+			</tbody>
 		</table>
 		{{/if}}
 	</div>
