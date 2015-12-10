@@ -4,20 +4,24 @@ Meteor.methods({
     return goals;
   },
 
-  'addGoal': function(userId, goalNumber, goalType) {
-    console.log("inserting yo");
+  'addGoal': function(userId, goalText, goalNumber, goalType) {
     Goals.insert({
       user_id: userId,
+      text: goalText,
       type: goalType,
       number: goalNumber,
-      createdAt: new Date() 
+      createdAt: new Date(),
+      private: false 
     });
   },
-  'loadGoals': function(userId) {
-
-    
+  'removeGoal': function(goalId){
+    Goals.remove({_id: goalId});
   },
-  'getProgress': function(userId, goalTypes) {
+  'setPrivate': function(goalId, setPrivacy){
+    Goals.update(goalId, {$set: {private: setPrivacy}});
+  },
 
+  'getProgress': function(userId, goalTypes) {
+    //Make api calls to twitter
   }
 });

@@ -1,0 +1,30 @@
+<template name="goalProgress">
+	{{#if currentUser}}
+		<h1>My goals</h1>
+    	<ul>
+      		{{#each goals}}
+       			<li class="goal {{#if private}}private{{/if}}">Name: {{text}}  Number: {{number}} Type:{{type}}</li>
+       			<button class="delete">&times;</button>
+
+	    	{{#if isOwner}}
+		    	<button class="toggle-private">
+		        	{{#if private}}
+		          	Private
+		        	{{else}}
+		          	Public
+		        	{{/if}}
+		     	</button>
+	    	{{/if}}        
+
+      		{{/each}}
+    	</ul> 
+	{{/if}}
+
+	<h1>Public Goals</h1>
+	<u1>
+		{{#each publicGoal}}
+			<li class="publicGoal">Name: {{text}} Number: {{number}} Type:{{type}}</li>
+		{{/each}}
+	</u1>
+
+</template>
