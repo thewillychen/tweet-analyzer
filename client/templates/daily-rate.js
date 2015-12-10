@@ -10,7 +10,6 @@ Template.dailyRate.helpers({
 Template.dailyRate.onCreated(function(){
 	Meteor.call('getTweetRate', function(err, result){
 		Session.set('dailyRate', result);
-		console.log(Session.get('dailyRate'));
 	});		
 	return Session.get('dailyRate');
 });

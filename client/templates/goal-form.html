@@ -5,8 +5,11 @@
    <p>I want to have: </p>
    <form class="new-goal">
     <div class="row">
-      <div class="col-lg-6">
-        <input type="text" class="form-control" placeholder="Type a number... aim high" aria-describedby="basic-addon1">
+      <div class="col-lg-4">
+        <input type="text" class="form-control" name="goalText" placeholder="Name your goal!" aria-describedby="basic-addon1">
+      </div>
+      <div class="col-lg-3">
+        <input type="text" class="form-control" name="goalNumber" placeholder="Number" aria-describedby="basic-addon1">
       </div>
       <div class="col-lg-4">
         {{> goalDropdown}}
