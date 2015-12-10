@@ -13,14 +13,7 @@ Meteor.methods({
 		var days = currentDay.diff(oldestTweet, 'days');
 		console.log(Tweets.find().count()/days);
 		return Tweets.find().count()/days;
-	}
+	},
+
 
 });
-
-
-// Template.dailyRate.onCreated(function(){
-// 	Meteor.call('getTweetRate', function(err, result){
-// 		Session.set('dailyRate', result);
-// 	});		
-// 	return Session.get('dailyRate');
-// });
